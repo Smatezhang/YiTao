@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">YiTao</string>
+    <string name="skip">跳过</string>
+    <string name="market">市场</string>
+    <string name="message">消息</string>
+    <string name="people">通讯录</string>
+    <string name="me">我</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_mefragment">nfie</string>
+    <string name="hello_Unloginfragment">请先登录！！！</string>
+</resources>
