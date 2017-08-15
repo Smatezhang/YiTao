@@ -1,4 +1,4 @@
-package com.zhuoxin.easyshop.network;
+package com.zhuoxin.zhang.yitao.network;
 
 /**
  * 存放易淘项目的接口类
