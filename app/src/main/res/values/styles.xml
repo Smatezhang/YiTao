@@ -19,5 +19,14 @@
         <item name="android:clickable">true</item>
     </style>
 
+    <style name="style_me_tv">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/dp10</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:padding">@dimen/dp5</item>
+        <item name="android:textSize">@dimen/sp25</item>
+    </style>
+
 
 </resources>
