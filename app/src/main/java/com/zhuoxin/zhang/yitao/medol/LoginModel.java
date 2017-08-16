@@ -1,9 +1,12 @@
 package com.zhuoxin.zhang.yitao.medol;
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 import com.zhuoxin.zhang.yitao.medol.listener.OnLoginListener;
 import com.zhuoxin.zhang.yitao.medol.network.EasyShopClient;
 import com.zhuoxin.zhang.yitao.medol.network.UICallBack;
+import com.zhuoxin.zhang.yitao.medol.user.CachePreferences;
 import com.zhuoxin.zhang.yitao.medol.user.UserResult;
 
 import java.io.IOException;
@@ -47,14 +50,17 @@ public class LoginModel implements ILoginModel {
         call.enqueue(new UICallBack() {
             @Override
             public void onFailureUI(Call call, IOException e) {
-                onLoginListener.failed(e.toString());
+                onLoginListener.failed(e.getMessage());
             }
 
             @Override
             public void onResponseUI(Call call, String response) {
                 UserResult result = new Gson().fromJson(response, UserResult.class);
+                Log.e("tag",result.toString());
                 int code = result.getCode();
                 if (code == 1){
+                    //保存数据
+                    CachePreferences.setUser(result.getUser());
                     onLoginListener.successed(result);
                 }else if (code == 2){
                     onLoginListener.failed(result.getMessage());

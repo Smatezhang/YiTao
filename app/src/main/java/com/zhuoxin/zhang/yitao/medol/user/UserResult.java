@@ -12,6 +12,15 @@ public class UserResult {
     @SerializedName("data")
     private User user;
 
+    @Override
+    public String toString() {
+        return "UserResult{" +
+                "code=" + code +
+                ", message='" + message + '\'' +
+                ", user=" + user +
+                '}';
+    }
+
     public int getCode() {
         return code;
     }

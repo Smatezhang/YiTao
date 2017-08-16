@@ -13,9 +13,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.zhuoxin.zhang.yitao.R;
-import com.zhuoxin.zhang.yitao.base.BaseActivity;
+import com.zhuoxin.zhang.yitao.view.base.BaseActivity;
 import com.zhuoxin.zhang.yitao.medol.user.CachePreferences;
-import com.zhuoxin.zhang.yitao.medol.user.User;
 import com.zhuoxin.zhang.yitao.medol.user.UserResult;
 import com.zhuoxin.zhang.yitao.presenter.LoginPresenter;
 import com.zhuoxin.zhang.yitao.view.activity.MainActivity;
@@ -30,7 +29,7 @@ import butterknife.Unbinder;
  * Created by Administrator on 2017/8/15.
  */
 
-public class LoginActivity extends BaseActivity implements ILoginActivity{
+public class LoginActivity extends BaseActivity implements ILoginActivity {
     @BindView(R.id.et_user)
     EditText etUser;
     @BindView(R.id.et_password)
@@ -72,6 +71,7 @@ public class LoginActivity extends BaseActivity implements ILoginActivity{
             }
         });
     }
+
     TextWatcher textWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -85,33 +85,25 @@ public class LoginActivity extends BaseActivity implements ILoginActivity{
 
         @Override
         public void afterTextChanged(Editable s) {
-            Boolean isEnable = (!TextUtils.isEmpty(etPassword.getText().toString().trim())&&!TextUtils.isEmpty(etUser.getText().toString().trim()));
+            Boolean isEnable = (!TextUtils.isEmpty(etPassword.getText().toString().trim()) && !TextUtils.isEmpty(etUser.getText().toString().trim()));
             btnLogin.setEnabled(isEnable);
-            if (isEnable) btnLogin.setBackgroundResource(R.color.colorPrimary);
+            if (isEnable) btnLogin.setBackgroundResource(R.drawable.selector_btn);
         }
     };
 
-    /*@Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-       switch (item.getItemId()){
-           case android.R.id.home:
-               finish();
-               break;
-       }
-    }*/
 
     @OnClick({R.id.btn_login, R.id.tv_fast_register})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_login:
-                if (loginPresenter == null){
+                if (loginPresenter == null) {
                     loginPresenter = new LoginPresenter(this);
                 }
                 loginPresenter.login();
 
                 break;
             case R.id.tv_fast_register:
-                startActivity( RegisterActivity.class);
+                startActivity(RegisterActivity.class);
                 break;
         }
     }
@@ -123,18 +115,16 @@ public class LoginActivity extends BaseActivity implements ILoginActivity{
 
     @Override
     public String getusername() {
-        return  etUser.getText().toString().trim();
+        return etUser.getText().toString().trim();
 
     }
 
 
     @Override
     public void loginSuccessed(UserResult result) {
-        CachePreferences.setUser(result.getUser());
         showToast(result.getMessage());
         startActivity(MainActivity.class);
-
-
+        finish();
     }
 
     @Override
@@ -145,25 +135,25 @@ public class LoginActivity extends BaseActivity implements ILoginActivity{
 
     @Override
     public void showpb() {
-        if (progressDialogFragment == null){
+        if (progressDialogFragment == null) {
             progressDialogFragment = new ProgressDialogFragment();
         }
-        if (!progressDialogFragment.isVisible()){
-            progressDialogFragment.show(getSupportFragmentManager(),"pb");
+        if (!progressDialogFragment.isVisible()) {
+            progressDialogFragment.show(getSupportFragmentManager(), "pb");
         }
     }
 
     @Override
     public void hidepb() {
-        if (progressDialogFragment != null){
+        if (progressDialogFragment != null) {
             if (progressDialogFragment.isVisible()) progressDialogFragment.dismiss();
         }
     }
 
     @Override
     protected void onDestroy() {
-        if (progressDialogFragment !=null){
-            progressDialogFragment =null;
+        if (progressDialogFragment != null) {
+            progressDialogFragment = null;
         }
         bind.unbind();
 

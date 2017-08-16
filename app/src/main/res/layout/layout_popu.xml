@@ -14,15 +14,20 @@
         android:id="@+id/btn_popu_album"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp60"
-        android:text="@string/popu_album" />
+        android:text="@string/popu_album"
+        style="@style/AppTheme.Button.EasyShop"/>
 
     <Button
         android:id="@+id/btn_popu_camera"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp60"
-        android:text="@string/popu_camear" />
+        style="@style/AppTheme.Button.EasyShop"
+
+        android:text="@string/popu_camear"
+        />
 
     <Button
+
         android:id="@+id/btn_popu_cancel"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp60"

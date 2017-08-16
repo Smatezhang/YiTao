@@ -25,6 +25,18 @@ public class User {
     @SerializedName("nickname")
     private String nick_name;
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", hx_Id='" + hx_Id + '\'' +
+                ", table_Id='" + table_Id + '\'' +
+                ", password='" + password + '\'' +
+                ", head_Image='" + head_Image + '\'' +
+                ", nick_name='" + nick_name + '\'' +
+                '}';
+    }
+
     public String getHead_Image() {
         return head_Image;
     }

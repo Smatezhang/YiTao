@@ -1,14 +1,19 @@
 package com.zhuoxin.zhang.yitao.view.me;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.pkmmte.view.CircularImageView;
 import com.zhuoxin.zhang.yitao.R;
-import com.zhuoxin.zhang.yitao.base.BaseFragment;
+import com.zhuoxin.zhang.yitao.medol.LoginModel;
+import com.zhuoxin.zhang.yitao.medol.network.EasyShopApi;
+import com.zhuoxin.zhang.yitao.medol.user.User;
+import com.zhuoxin.zhang.yitao.view.base.BaseFragment;
 import com.zhuoxin.zhang.yitao.medol.user.CachePreferences;
 
 import butterknife.BindView;
@@ -40,7 +45,27 @@ public class MeFragment extends BaseFragment {
         }
 
         unbinder = ButterKnife.bind(this, mView);
+
+        init();
         return mView;
+    }
+
+    private void init() {
+        User user = CachePreferences.getUser();
+        if (user.getName() !=null){
+            //Log.e("tag", user.toString());
+            if (user.getHead_Image() != null){
+                Glide.with(this).load(EasyShopApi.IMAGE_URL+user.getHead_Image()).into(meCiv);
+            }
+           if (user.getNick_name()!=null){
+               tvLoginRegister.setText(user.getName());
+           }else {
+               tvLoginRegister.setText("请设置昵称");
+           }
+
+
+        }
+
     }
 
 
@@ -59,15 +84,32 @@ public class MeFragment extends BaseFragment {
 
         switch (view.getId()) {
             case R.id.me_civ:
+                startActivity(UserInfoActivity.class);
+
                 break;
             case R.id.tv_login_register:
+                startActivity(UserInfoActivity.class);
+
                 break;
             case R.id.iv_my_information:
+                startActivity(UserInfoActivity.class);
+
                 break;
             case R.id.iv_foods:
+
+
                 break;
             case R.id.iv_upload:
+
+
                 break;
         }
+    }
+
+    @Override
+    public void onResume() {
+        init();
+
+        super.onResume();
     }
 }

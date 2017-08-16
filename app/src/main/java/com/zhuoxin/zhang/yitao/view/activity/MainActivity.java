@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.zhuoxin.zhang.yitao.R;
-import com.zhuoxin.zhang.yitao.base.BaseActivity;
+import com.zhuoxin.zhang.yitao.view.base.BaseActivity;
 import com.zhuoxin.zhang.yitao.view.me.MeFragment;
 import com.zhuoxin.zhang.yitao.view.fragement.ShopFragment;
 import com.zhuoxin.zhang.yitao.view.fragement.UnLoginFragment;
@@ -51,6 +51,8 @@ public class MainActivity extends BaseActivity {
     }
 
     private void init() {
+
+
         CachePreferences.init(this);
         mMainVp.setAdapter(mFragmentStatePagerAdapter);
         mMainVp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -130,4 +132,10 @@ public class MainActivity extends BaseActivity {
 
 
     };
+
+    @Override
+    protected void onDestroy() {
+        CachePreferences.clearAllData();
+        super.onDestroy();
+    }
 }

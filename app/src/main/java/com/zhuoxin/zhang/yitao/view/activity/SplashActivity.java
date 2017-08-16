@@ -39,25 +39,27 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 jump();
-                finish();
+
             }
         },3000);
     }
     public void jump(){
         startActivity(new Intent(this,MainActivity.class));
-
+        mTimer.cancel();
+        finish();
     }
 
 
     @OnClick(R.id.tv_splash)
     public void onViewClicked() {
         jump();
-        finish();
     }
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
+
         mTimer =null;
+        super.onDestroy();
+
     }
 }

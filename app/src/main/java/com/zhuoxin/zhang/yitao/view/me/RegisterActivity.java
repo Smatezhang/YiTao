@@ -12,7 +12,11 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.zhuoxin.zhang.yitao.R;
-import com.zhuoxin.zhang.yitao.base.BaseActivity;
+import com.zhuoxin.zhang.yitao.medol.user.UserResult;
+import com.zhuoxin.zhang.yitao.view.activity.MainActivity;
+import com.zhuoxin.zhang.yitao.view.base.BaseActivity;
+import com.zhuoxin.zhang.yitao.presenter.RegisterPresenter;
+import com.zhuoxin.zhang.yitao.view.component.ProgressDialogFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,7 +26,7 @@ import butterknife.OnClick;
  * Created by Administrator on 2017/8/15.
  */
 
-public class RegisterActivity extends BaseActivity {
+public class RegisterActivity extends BaseActivity implements IRegisterActivity {
     @BindView(R.id.tl)
     Toolbar tl;
     @BindView(R.id.et_user)
@@ -33,6 +37,8 @@ public class RegisterActivity extends BaseActivity {
     EditText etRepassword;
     @BindView(R.id.btn_login)
     Button btnLogin;
+    protected RegisterPresenter registerPresenter;
+    protected ProgressDialogFragment progressDialogFragment;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -60,6 +66,7 @@ public class RegisterActivity extends BaseActivity {
         });
 
     }
+
     TextWatcher textWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -74,8 +81,8 @@ public class RegisterActivity extends BaseActivity {
         @Override
         public void afterTextChanged(Editable s) {
             Boolean isEnable = (!TextUtils.isEmpty(etPassword.getText().toString().trim())
-                    &&!TextUtils.isEmpty(etUser.getText().toString().trim())
-                    &&!TextUtils.isEmpty(etRepassword.getText().toString().trim()));
+                    && !TextUtils.isEmpty(etUser.getText().toString().trim())
+                    && !TextUtils.isEmpty(etRepassword.getText().toString().trim()));
             btnLogin.setEnabled(isEnable);
             if (isEnable) btnLogin.setBackgroundResource(R.color.colorPrimary);
         }
@@ -83,5 +90,65 @@ public class RegisterActivity extends BaseActivity {
 
     @OnClick(R.id.btn_login)
     public void onViewClicked() {
+        if (registerPresenter == null){
+            registerPresenter = new RegisterPresenter(this);
+        }
+        registerPresenter.register();
     }
+
+
+    @Override
+    public String getUserName() {
+        return etUser.getText().toString().trim();
+    }
+
+    @Override
+    public String getPassword() {
+        return etPassword.getText().toString().trim();
+    }
+
+    @Override
+    public String getRePassword() {
+        return etRepassword.getText().toString().trim();
+    }
+
+    @Override
+    public void registerSuccessed(String s) {
+        showToast(s);
+        //startActivity(MainActivity.class);
+        finish();
+    }
+
+    @Override
+    public void registerFailed(String s) {
+        showToast(s);
+        etUser.setText("");
+        etPassword.setText("");
+        etRepassword.setText("");
+    }
+
+    @Override
+    public void showpb() {
+        if (progressDialogFragment == null){
+
+            progressDialogFragment = new ProgressDialogFragment();
+        }
+        if (!progressDialogFragment.isVisible()){
+            progressDialogFragment.show(getSupportFragmentManager(),"pb");
+        }
+    }
+
+    @Override
+    public void hidepb() {
+        if (progressDialogFragment ==null){
+            return;
+        }
+        if (progressDialogFragment.isVisible()){
+
+            progressDialogFragment.dismiss();
+        }
+
+    }
+
+
 }

@@ -5,4 +5,7 @@ package com.zhuoxin.zhang.yitao.medol.listener;
  */
 
 public interface OnRegisterListener {
+    void successed(String s);
+
+    void failed(String s);
 }

@@ -12,16 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:replace="android:icon, android:theme">
-        <activity android:name=".view.activity.SplashActivity">
+        <activity android:name=".view.activity.SplashActivity"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".view.activity.MainActivity"/>
+        <activity android:name=".view.activity.MainActivity"
+            android:launchMode="singleTask"/>
         <activity android:name=".view.me.LoginActivity"/>
         <activity android:name=".view.me.RegisterActivity"/>
+        <activity android:name=".view.me.UserInfoActivity"/>
     </application>
 
 </manifest>

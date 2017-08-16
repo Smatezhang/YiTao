@@ -1,4 +1,4 @@
-package com.zhuoxin.zhang.yitao.base;
+package com.zhuoxin.zhang.yitao.view.base;
 
 import android.content.Intent;
 import android.os.Bundle;
