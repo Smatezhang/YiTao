@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.zhuoxin.zhang.yitao.view.activity.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/main_tl"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/main_tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:gravity="center"
+            android:text="@string/market"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp20"/>
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/main_vp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/main_tv_market"
+            style="@style/style_main_tv"
+            android:drawableTop="@drawable/selector_ic_shopping"
+            android:text="@string/market"/>
+
+        <TextView
+            android:id="@+id/main_tv_message"
+            style="@style/style_main_tv"
+            android:drawableTop="@drawable/selector_ic_chat"
+            android:text="@string/message"/>
+
+        <TextView
+            android:id="@+id/main_tv_people"
+            style="@style/style_main_tv"
+            android:drawableTop="@drawable/selector_ic_people"
+            android:text="@string/people"/>
+
+        <TextView
+            android:id="@+id/main_tv_me"
+            style="@style/style_main_tv"
+            android:drawableTop="@drawable/selector_ic_identity"
+            android:text="@string/me"/>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,72 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             tools:context="com.zhuoxin.zhang.yitao.view.me.MeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp200"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            >
+
+
+            <com.pkmmte.view.CircularImageView
+                android:id="@+id/me_civ"
+                android:layout_width="@dimen/dp120"
+                android:layout_height="@dimen/dp120"
+                android:src="@mipmap/user_ico"
+                app:border="true"
+                app:border_color="@color/color_border"
+                app:border_width="@dimen/dp1"
+                />
+            <TextView
+                android:id="@+id/tv_login_register"
+                android:clickable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp10"
+                android:text="@string/login_orRegister"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp20"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/iv_my_information"
+            android:clickable="true"
+            android:padding="@dimen/dp10"
+            android:drawableRight="@drawable/selector_item_go"
+            android:drawableEnd="@drawable/selector_item_go"
+            android:text="@string/information"
+            style="@style/style_me_tv"/>
+        <TextView
+            android:padding="@dimen/dp10"
+            android:id="@+id/iv_foods"
+            android:clickable="true"
+            android:drawableRight="@drawable/selector_item_go"
+            android:drawableEnd="@drawable/selector_item_go"
+            android:text="@string/my_products"
+            style="@style/style_me_tv"/>
+        <TextView
+            android:padding="@dimen/dp10"
+            android:id="@+id/iv_upload"
+            android:clickable="true"
+            android:drawableEnd="@drawable/selector_item_go"
+            android:text="@string/item_spread"
+            style="@style/style_me_tv"
+            android:drawableRight="@drawable/selector_item_go" />
+    </LinearLayout>
+
+
+
+</FrameLayout>
