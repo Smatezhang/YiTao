@@ -1,6 +1,6 @@
 package com.zhuoxin.zhang.yitao.medol.listener;
 
-import com.zhuoxin.zhang.yitao.medol.user.UserResult;
+import com.zhuoxin.zhang.yitao.medol.entity.UserResult;
 
 /**
  * Created by Administrator on 2017/8/15.

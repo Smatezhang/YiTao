@@ -7,13 +7,12 @@ import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.zhuoxin.zhang.yitao.R;
-import com.zhuoxin.zhang.yitao.medol.user.UserResult;
-import com.zhuoxin.zhang.yitao.view.activity.MainActivity;
 import com.zhuoxin.zhang.yitao.view.base.BaseActivity;
 import com.zhuoxin.zhang.yitao.presenter.RegisterPresenter;
 import com.zhuoxin.zhang.yitao.view.component.ProgressDialogFragment;
@@ -94,6 +93,7 @@ public class RegisterActivity extends BaseActivity implements IRegisterActivity 
             registerPresenter = new RegisterPresenter(this);
         }
         registerPresenter.register();
+        showpb();
     }
 
 
@@ -133,6 +133,7 @@ public class RegisterActivity extends BaseActivity implements IRegisterActivity 
 
             progressDialogFragment = new ProgressDialogFragment();
         }
+        Log.e("tag","register:"+String.valueOf(progressDialogFragment.isVisible()));
         if (!progressDialogFragment.isVisible()){
             progressDialogFragment.show(getSupportFragmentManager(),"pb");
         }
@@ -143,6 +144,7 @@ public class RegisterActivity extends BaseActivity implements IRegisterActivity 
         if (progressDialogFragment ==null){
             return;
         }
+        Log.e("tag","register2:"+String.valueOf(progressDialogFragment.isVisible()));
         if (progressDialogFragment.isVisible()){
 
             progressDialogFragment.dismiss();

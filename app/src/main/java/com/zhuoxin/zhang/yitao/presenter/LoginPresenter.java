@@ -2,7 +2,7 @@ package com.zhuoxin.zhang.yitao.presenter;
 
 import com.zhuoxin.zhang.yitao.medol.LoginModel;
 import com.zhuoxin.zhang.yitao.medol.listener.OnLoginListener;
-import com.zhuoxin.zhang.yitao.medol.user.UserResult;
+import com.zhuoxin.zhang.yitao.medol.entity.UserResult;
 import com.zhuoxin.zhang.yitao.view.me.LoginActivity;
 
 /**
@@ -25,7 +25,7 @@ public class LoginPresenter implements ILoginPresenter {
             @Override
             public void successed(UserResult result) {
                 loginActivity.loginSuccessed(result);
-                loginActivity.showpb();
+                loginActivity.hidepb();
 
 
             }

@@ -1,7 +1,6 @@
 package com.zhuoxin.zhang.yitao.view.me;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,11 +9,10 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.pkmmte.view.CircularImageView;
 import com.zhuoxin.zhang.yitao.R;
-import com.zhuoxin.zhang.yitao.medol.LoginModel;
 import com.zhuoxin.zhang.yitao.medol.network.EasyShopApi;
-import com.zhuoxin.zhang.yitao.medol.user.User;
+import com.zhuoxin.zhang.yitao.medol.entity.User;
 import com.zhuoxin.zhang.yitao.view.base.BaseFragment;
-import com.zhuoxin.zhang.yitao.medol.user.CachePreferences;
+import com.zhuoxin.zhang.yitao.medol.entity.CachePreferences;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -107,9 +105,9 @@ public class MeFragment extends BaseFragment {
     }
 
     @Override
-    public void onResume() {
+    public void onStart() {
         init();
 
-        super.onResume();
+        super.onStart();
     }
 }

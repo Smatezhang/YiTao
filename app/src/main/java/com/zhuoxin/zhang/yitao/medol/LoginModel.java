@@ -6,13 +6,12 @@ import com.google.gson.Gson;
 import com.zhuoxin.zhang.yitao.medol.listener.OnLoginListener;
 import com.zhuoxin.zhang.yitao.medol.network.EasyShopClient;
 import com.zhuoxin.zhang.yitao.medol.network.UICallBack;
-import com.zhuoxin.zhang.yitao.medol.user.CachePreferences;
-import com.zhuoxin.zhang.yitao.medol.user.UserResult;
+import com.zhuoxin.zhang.yitao.medol.entity.CachePreferences;
+import com.zhuoxin.zhang.yitao.medol.entity.UserResult;
 
 import java.io.IOException;
 
 import okhttp3.Call;
-import okhttp3.Response;
 
         /*
          {

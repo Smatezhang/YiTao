@@ -2,7 +2,6 @@ package com.zhuoxin.zhang.yitao.presenter;
 
 import com.zhuoxin.zhang.yitao.medol.RegisterModel;
 import com.zhuoxin.zhang.yitao.medol.listener.OnRegisterListener;
-import com.zhuoxin.zhang.yitao.medol.user.UserResult;
 import com.zhuoxin.zhang.yitao.view.me.RegisterActivity;
 
 /**
@@ -24,7 +23,8 @@ public class RegisterPresenter implements IRegisterPresenter{
             @Override
             public void successed(String s) {
                     registerActivity.registerSuccessed(s);
-                    registerActivity.showpb();
+                    //registerActivity.showpb();
+                    registerActivity.hidepb();
             }
 
             @Override

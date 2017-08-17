@@ -88,4 +88,18 @@ public class EasyShopClient {
     }
 
 
+    public Call loadGoods(int page,String type){
+        FormBody body = new FormBody.Builder()
+                .add("pageNo", ""+page)
+                .add("type", type)
+                .build();
+        Request request = new Request.Builder()
+                .url(EasyShopApi.BASE_URL + EasyShopApi.GETGOODS)
+                .post(body)
+                .build();
+
+        return mClient.newCall(request);
+
+    }
+
 }

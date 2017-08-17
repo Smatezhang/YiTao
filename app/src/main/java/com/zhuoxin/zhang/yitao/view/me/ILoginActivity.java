@@ -1,7 +1,6 @@
 package com.zhuoxin.zhang.yitao.view.me;
 
-import com.zhuoxin.zhang.yitao.medol.user.User;
-import com.zhuoxin.zhang.yitao.medol.user.UserResult;
+import com.zhuoxin.zhang.yitao.medol.entity.UserResult;
 
 /**
  * Created by Administrator on 2017/8/15.

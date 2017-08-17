@@ -14,8 +14,7 @@ import android.widget.TextView;
 
 import com.zhuoxin.zhang.yitao.R;
 import com.zhuoxin.zhang.yitao.view.base.BaseActivity;
-import com.zhuoxin.zhang.yitao.medol.user.CachePreferences;
-import com.zhuoxin.zhang.yitao.medol.user.UserResult;
+import com.zhuoxin.zhang.yitao.medol.entity.UserResult;
 import com.zhuoxin.zhang.yitao.presenter.LoginPresenter;
 import com.zhuoxin.zhang.yitao.view.activity.MainActivity;
 import com.zhuoxin.zhang.yitao.view.component.ProgressDialogFragment;
@@ -100,6 +99,7 @@ public class LoginActivity extends BaseActivity implements ILoginActivity {
                     loginPresenter = new LoginPresenter(this);
                 }
                 loginPresenter.login();
+                showpb();
 
                 break;
             case R.id.tv_fast_register:

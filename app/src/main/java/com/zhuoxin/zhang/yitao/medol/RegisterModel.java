@@ -1,7 +1,6 @@
 package com.zhuoxin.zhang.yitao.medol;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -12,9 +11,7 @@ import com.zhuoxin.zhang.yitao.medol.listener.OnRegisterListener;
 
 import com.zhuoxin.zhang.yitao.medol.network.EasyShopClient;
 import com.zhuoxin.zhang.yitao.medol.network.UICallBack;
-import com.zhuoxin.zhang.yitao.medol.user.CachePreferences;
-import com.zhuoxin.zhang.yitao.medol.user.Register;
-import com.zhuoxin.zhang.yitao.medol.user.UserResult;
+import com.zhuoxin.zhang.yitao.medol.entity.Register;
 import com.zhuoxin.zhang.yitao.medol.utils.RegexUtils;
 
 import java.io.IOException;

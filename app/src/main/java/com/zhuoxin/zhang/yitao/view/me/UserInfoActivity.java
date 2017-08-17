@@ -1,11 +1,9 @@
 package com.zhuoxin.zhang.yitao.view.me;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
@@ -13,7 +11,7 @@ import android.widget.TextView;
 
 import com.pkmmte.view.CircularImageView;
 import com.zhuoxin.zhang.yitao.R;
-import com.zhuoxin.zhang.yitao.medol.user.CachePreferences;
+import com.zhuoxin.zhang.yitao.medol.entity.CachePreferences;
 import com.zhuoxin.zhang.yitao.view.base.BaseActivity;
 import com.zhuoxin.zhang.yitao.view.component.PicWindow;
 

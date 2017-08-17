@@ -9,11 +9,11 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.zhuoxin.zhang.yitao.R;
+import com.zhuoxin.zhang.yitao.medol.entity.CachePreferences;
 import com.zhuoxin.zhang.yitao.view.base.BaseActivity;
-import com.zhuoxin.zhang.yitao.view.me.MeFragment;
-import com.zhuoxin.zhang.yitao.view.fragement.ShopFragment;
 import com.zhuoxin.zhang.yitao.view.fragement.UnLoginFragment;
-import com.zhuoxin.zhang.yitao.medol.user.CachePreferences;
+import com.zhuoxin.zhang.yitao.view.me.MeFragment;
+import com.zhuoxin.zhang.yitao.view.shop.ShopFragment;
 
 import butterknife.BindColor;
 import butterknife.BindView;
