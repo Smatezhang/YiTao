@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.zhuoxin.zhang.yitao">
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.zhuoxin.zhang.yitao">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:name=".view.activity.ShopApplication"
@@ -16,18 +16,22 @@
         tools:replace="android:icon, android:theme">
         <activity android:name=".view.activity.SplashActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".view.activity.MainActivity"
-            android:launchMode="singleTask" />
-        <activity android:name=".view.me.LoginActivity" />
-        <activity android:name=".view.me.RegisterActivity" />
-        <activity android:name=".view.me.UserInfoActivity" />
-        <activity android:name=".view.shop.GoodsDetailsActivity"></activity>
+            android:launchMode="singleTask"/>
+        <activity android:name=".view.me.LoginActivity"/>
+        <activity android:name=".view.me.RegisterActivity"/>
+        <activity android:name=".view.me.UserInfoActivity"/>
+        <activity android:name=".view.shop.GoodsDetailsActivity"/>
+        <activity android:name=".view.me.PersonInfoActivity">
+        </activity>
+        <activity android:name=".view.me.NickNameActivity">
+        </activity>
     </application>
 
 </manifest>

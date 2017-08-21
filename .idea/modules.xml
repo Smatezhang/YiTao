@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/EasyShop/EasyShop.iml" filepath="$PROJECT_DIR$/EasyShop/EasyShop.iml" />
       <module fileurl="file://$PROJECT_DIR$/YiTao.iml" filepath="$PROJECT_DIR$/YiTao.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

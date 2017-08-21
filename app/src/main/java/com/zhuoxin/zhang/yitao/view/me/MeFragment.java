@@ -7,10 +7,14 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.nostra13.universalimageloader.core.ImageLoader;
 import com.pkmmte.view.CircularImageView;
 import com.zhuoxin.zhang.yitao.R;
+import com.zhuoxin.zhang.yitao.medol.PersonInfoView;
+import com.zhuoxin.zhang.yitao.medol.entity.AvaterLoadOptions;
 import com.zhuoxin.zhang.yitao.medol.network.EasyShopApi;
 import com.zhuoxin.zhang.yitao.medol.entity.User;
+import com.zhuoxin.zhang.yitao.medol.utils.ActivityUtils;
 import com.zhuoxin.zhang.yitao.view.base.BaseFragment;
 import com.zhuoxin.zhang.yitao.medol.entity.CachePreferences;
 
@@ -33,6 +37,7 @@ public class MeFragment extends BaseFragment {
     TextView ivUpload;
     Unbinder unbinder;
     private View mView;
+    protected ActivityUtils mActivityUtils;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -43,26 +48,29 @@ public class MeFragment extends BaseFragment {
         }
 
         unbinder = ButterKnife.bind(this, mView);
+        mActivityUtils = new ActivityUtils(this);//弱引用
 
         init();
         return mView;
     }
 
+    /**
+     * 初始化
+     * 个人信息界面
+     *
+     */
     private void init() {
         User user = CachePreferences.getUser();
-        if (user.getName() !=null){
-            //Log.e("tag", user.toString());
-            if (user.getHead_Image() != null){
-                Glide.with(this).load(EasyShopApi.IMAGE_URL+user.getHead_Image()).into(meCiv);
-            }
-           if (user.getNick_name()!=null){
-               tvLoginRegister.setText(user.getName());
-           }else {
-               tvLoginRegister.setText("请设置昵称");
-           }
-
-
+        if (user.getName() == null) {
+            return;
+        } else if (user.getNick_name() == null) {
+            tvLoginRegister.setText("请设置昵称");
+        } else {
+            tvLoginRegister.setText(user.getName());
         }
+        //加载头像
+        ImageLoader.getInstance().displayImage(EasyShopApi.IMAGE_URL + user.getHead_Image(), meCiv, AvaterLoadOptions.build_item());
+
 
     }
 
@@ -70,27 +78,23 @@ public class MeFragment extends BaseFragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        unbinder.unbind();
+        unbinder.unbind();//解绑
     }
 
     @OnClick({R.id.me_civ, R.id.tv_login_register, R.id.iv_my_information, R.id.iv_foods, R.id.iv_upload})
     public void onViewClicked(View view) {
-            if(CachePreferences.getUser().getName() == null){
-                startActivity(LoginActivity.class);
-                return;
-            }
+        if (CachePreferences.getUser().getName() == null) {
+            mActivityUtils.startActivity(LoginActivity.class);
+            return;
+        }
 
         switch (view.getId()) {
             case R.id.me_civ:
-                startActivity(UserInfoActivity.class);
 
-                break;
             case R.id.tv_login_register:
-                startActivity(UserInfoActivity.class);
 
-                break;
             case R.id.iv_my_information:
-                startActivity(UserInfoActivity.class);
+                mActivityUtils.startActivity(PersonInfoActivity.class);
 
                 break;
             case R.id.iv_foods:
