@@ -9,10 +9,10 @@ public interface IRegisterActivity {
 
     String getPassword();
     String getRePassword();
+    void showMsg(String msg);
+    void registerSuccessed();
 
-    void registerSuccessed(String s);
-
-    void registerFailed(String s);
+    void registerFailed();
 
     void showpb();
 

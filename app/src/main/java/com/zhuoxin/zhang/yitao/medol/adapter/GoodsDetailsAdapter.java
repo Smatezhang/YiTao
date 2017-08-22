@@ -19,6 +19,7 @@ public class GoodsDetailsAdapter extends PagerAdapter {
         this.list = new ArrayList<>();
     }
     public void add(List data){
+        list.clear();
         list.addAll(data);
         notifyDataSetChanged();
     }
@@ -36,15 +37,21 @@ public class GoodsDetailsAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         ImageView mImageView = list.get(position);
+        ViewGroup parent = (ViewGroup) mImageView.getParent();
+
+        if (parent != null) {
+            parent.removeView(mImageView);
+        }
+
         container.addView(mImageView);
         return mImageView;
     }
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
-        super.destroyItem(container, position, object);
-        ImageView mImageView = list.get(position);
-        container.removeView(mImageView);
+       // super.destroyItem(container, position, object);
+
+        container.removeView(list.get(position));
 
     }
 }

@@ -11,23 +11,29 @@
     tools:ignore="Overdraw">
 
     <Button
+        android:textColor="@color/white"
         android:id="@+id/btn_popu_album"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp60"
+        android:layout_margin="@dimen/dp3"
         android:text="@string/popu_album"
-        style="@style/AppTheme.Button.EasyShop"/>
-
-    <Button
-        android:id="@+id/btn_popu_camera"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp60"
-        style="@style/AppTheme.Button.EasyShop"
-
-        android:text="@string/popu_camear"
+        android:textSize="@dimen/sp20"
+        android:background="@drawable/selector_btn"
         />
 
     <Button
+        android:background="@drawable/selector_btn"
+        android:id="@+id/btn_popu_camera"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp60"
+        android:layout_margin="@dimen/dp3"
+        android:textColor="@color/white"
+        android:text="@string/popu_camear"
+        android:textSize="@dimen/sp20"
+        />
 
+    <Button
+        android:layout_margin="@dimen/dp3"
         android:id="@+id/btn_popu_cancel"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp60"

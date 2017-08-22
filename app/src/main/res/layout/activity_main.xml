@@ -55,7 +55,7 @@
             android:id="@+id/main_tv_people"
             style="@style/style_main_tv"
             android:drawableTop="@drawable/selector_ic_people"
-            android:text="@string/people"/>
+            android:text="@string/list_perple"/>
 
         <TextView
             android:id="@+id/main_tv_me"

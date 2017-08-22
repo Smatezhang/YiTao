@@ -37,18 +37,18 @@ public class MeFragment extends BaseFragment {
     TextView ivUpload;
     Unbinder unbinder;
     private View mView;
-    protected ActivityUtils mActivityUtils;
+    private ActivityUtils mActivityUtils;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         if (mView == null) {
-            mView = inflater.inflate(R.layout.fragment_message, container, false);
+            mView = inflater.inflate(R.layout.fragment_message,null);
         }
 
         unbinder = ButterKnife.bind(this, mView);
-        mActivityUtils = new ActivityUtils(this);//弱引用
+        mActivityUtils = new ActivityUtils(getActivity());//弱引用
 
         init();
         return mView;
@@ -67,6 +67,9 @@ public class MeFragment extends BaseFragment {
             tvLoginRegister.setText("请设置昵称");
         } else {
             tvLoginRegister.setText(user.getName());
+        }
+        if( user.getHead_Image()==null){
+            return;
         }
         //加载头像
         ImageLoader.getInstance().displayImage(EasyShopApi.IMAGE_URL + user.getHead_Image(), meCiv, AvaterLoadOptions.build_item());
@@ -90,20 +93,13 @@ public class MeFragment extends BaseFragment {
 
         switch (view.getId()) {
             case R.id.me_civ:
-
             case R.id.tv_login_register:
-
             case R.id.iv_my_information:
                 mActivityUtils.startActivity(PersonInfoActivity.class);
-
                 break;
             case R.id.iv_foods:
-
-
                 break;
             case R.id.iv_upload:
-
-
                 break;
         }
     }

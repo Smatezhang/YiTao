@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\build\\intermediates\\res\\merged\\release\\menu\\fragment_hx_conversation_list.xml",
+        "source": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\src\\main\\res\\menu\\fragment_hx_conversation_list.xml"
+    },
+    {
+        "merged": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\build\\intermediates\\res\\merged\\release\\menu\\activity_hx_search_contact_list.xml",
+        "source": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\src\\main\\res\\menu\\activity_hx_search_contact_list.xml"
+    },
+    {
+        "merged": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\build\\intermediates\\res\\merged\\release\\menu\\fragment_hx_contact_list.xml",
+        "source": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\src\\main\\res\\menu\\fragment_hx_contact_list.xml"
+    },
+    {
+        "merged": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\build\\intermediates\\res\\merged\\release\\menu\\activity_hx_search_contact.xml",
+        "source": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\src\\main\\res\\menu\\activity_hx_search_contact.xml"
+    },
+    {
+        "merged": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\build\\intermediates\\res\\merged\\release\\menu\\fragment_hx_chat_video_call.xml",
+        "source": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\src\\main\\res\\menu\\fragment_hx_chat_video_call.xml"
+    }
+]

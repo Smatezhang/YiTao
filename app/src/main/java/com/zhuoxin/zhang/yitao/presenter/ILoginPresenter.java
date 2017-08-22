@@ -6,4 +6,6 @@ package com.zhuoxin.zhang.yitao.presenter;
 
 public interface ILoginPresenter {
     void login();
+    void attachView();
+    void detachView();
 }

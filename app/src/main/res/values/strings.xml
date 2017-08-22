@@ -96,4 +96,5 @@
     <string name="netrequsetfailed">网络请求失败</string>
     <string name="goodsunexist">商品过期不存在</string>
     <string name="goodsprice">商品价格:</string>
+    <string name="list_perple">通讯录</string>
 </resources>

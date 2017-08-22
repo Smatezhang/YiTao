@@ -20,14 +20,16 @@ import butterknife.ButterKnife;
  */
 
 public class PersonAdapter extends BaseAdapter {
-    protected List<ItemShow> mList;
+    public List<ItemShow> mList;
 
     public PersonAdapter() {
-        mList = new ArrayList<>();
+        mList = new ArrayList<ItemShow>();
     }
 
     public void add(List<ItemShow> data) {
+        mList.clear();
         mList.addAll(data);
+        notifyDataSetChanged();
     }
 
     @Override
@@ -56,11 +58,11 @@ public class PersonAdapter extends BaseAdapter {
         }
         mViewHolder= (ViewHolder) convertView.getTag();
         ItemShow mItemShow = mList.get(position);
-        mViewHolder.mTvItemName.setText(mItemShow.getItem_content());
-        mViewHolder.mTvPerson.setText(mItemShow.getItem_title());
+        mViewHolder.mTvPerson.setText(mItemShow.getItem_content());
+        mViewHolder.mTvItemName.setText(mItemShow.getItem_title());
 
 
-        return null;
+        return convertView;
     }
 
     static class ViewHolder {
@@ -70,6 +72,7 @@ public class PersonAdapter extends BaseAdapter {
         TextView mTvPerson;
         @BindView(R.id.textView2)
         TextView mTextView2;
+        View view;
 
         ViewHolder(View view) {
             ButterKnife.bind(this, view);

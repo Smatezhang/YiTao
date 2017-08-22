@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -110,7 +111,6 @@ public class GoodsDetailsActivity extends MvpActivity<GoodsDetailsView, GoodsDet
     @Override
     public void showProgress() {
         if (progressDialogFragment == null) {
-
             progressDialogFragment = new ProgressDialogFragment();
         }
         if (progressDialogFragment.isVisible()) {
@@ -127,18 +127,19 @@ public class GoodsDetailsActivity extends MvpActivity<GoodsDetailsView, GoodsDet
     @Override
     public void setImageData(List<String> arrayList) {
         mData = new ArrayList<>();
-        ImageView mImageView = new ImageView(this);
+
         for (String s:arrayList
              ) {
-            ImageLoader.getInstance().displayImage(EasyShopApi.IMAGE_URL+s,mImageView, AvaterLoadOptions.build_item());
-            mData.add(mImageView);
+            ImageView mImageView = new ImageView(this);
+            if (s != null){
+
+                ImageLoader.getInstance().displayImage(EasyShopApi.IMAGE_URL+s,mImageView, AvaterLoadOptions.build_item());
+                mData.add(mImageView);
+            }
         }
         mGoodsDetailsAdapter.add(mData);
         //原点指示器
         indicator.setViewPager(viewpager);
-
-
-
     }
 
 
@@ -178,5 +179,11 @@ public class GoodsDetailsActivity extends MvpActivity<GoodsDetailsView, GoodsDet
             case R.id.btn_detail_message:
                 break;
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) finish();
+        return super.onOptionsItemSelected(item);
     }
 }

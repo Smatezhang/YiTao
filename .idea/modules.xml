@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/EasyShop/EasyShop.iml" filepath="$PROJECT_DIR$/EasyShop/EasyShop.iml" />
       <module fileurl="file://$PROJECT_DIR$/YiTao.iml" filepath="$PROJECT_DIR$/YiTao.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apphx1/apphx1.iml" filepath="$PROJECT_DIR$/apphx1/apphx1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easeui1/easeui1.iml" filepath="$PROJECT_DIR$/easeui1/easeui1.iml" />
     </modules>
   </component>
 </project>

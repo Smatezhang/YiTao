@@ -97,6 +97,7 @@ public class LoginActivity extends BaseActivity implements ILoginActivity {
             case R.id.btn_login:
                 if (loginPresenter == null) {
                     loginPresenter = new LoginPresenter(this);
+                    loginPresenter.attachView();
                 }
                 loginPresenter.login();
                 showpb();
@@ -120,17 +121,13 @@ public class LoginActivity extends BaseActivity implements ILoginActivity {
     }
 
 
-    @Override
-    public void loginSuccessed(UserResult result) {
-        showToast(result.getMessage());
-        startActivity(MainActivity.class);
-        finish();
-    }
+
 
     @Override
-    public void loginFailed(String s) {
-        showToast(s);
+    public void loginFailed() {
 
+        etUser.setText("");
+        etPassword.setText("");
     }
 
     @Override
@@ -151,10 +148,27 @@ public class LoginActivity extends BaseActivity implements ILoginActivity {
     }
 
     @Override
+    public void showMsg(String msg) {
+        showToast(msg);//吐司
+    }
+
+    @Override
+    public void loginSuccess() {
+        //startActivity(MainActivity.class);//跳转到市场页面
+        finish();
+    }
+
+    @Override
     protected void onDestroy() {
         if (progressDialogFragment != null) {
+
             progressDialogFragment = null;
         }
+        if (loginPresenter != null) {
+            loginPresenter.detachView();
+            loginPresenter = null;
+        }
+
         bind.unbind();
 
         super.onDestroy();

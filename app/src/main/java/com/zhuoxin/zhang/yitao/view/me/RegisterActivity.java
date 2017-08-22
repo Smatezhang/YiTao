@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.zhuoxin.zhang.yitao.R;
+import com.zhuoxin.zhang.yitao.view.activity.MainActivity;
 import com.zhuoxin.zhang.yitao.view.base.BaseActivity;
 import com.zhuoxin.zhang.yitao.presenter.RegisterPresenter;
 import com.zhuoxin.zhang.yitao.view.component.ProgressDialogFragment;
@@ -91,6 +92,7 @@ public class RegisterActivity extends BaseActivity implements IRegisterActivity 
     public void onViewClicked() {
         if (registerPresenter == null){
             registerPresenter = new RegisterPresenter(this);
+            registerPresenter.attachView();
         }
         registerPresenter.register();
         showpb();
@@ -113,15 +115,20 @@ public class RegisterActivity extends BaseActivity implements IRegisterActivity 
     }
 
     @Override
-    public void registerSuccessed(String s) {
-        showToast(s);
+    public void showMsg(String msg) {
+        showToast(msg);
+    }
+
+    @Override
+    public void registerSuccessed() {
+
         //startActivity(MainActivity.class);
         finish();
     }
 
     @Override
-    public void registerFailed(String s) {
-        showToast(s);
+    public void registerFailed() {
+
         etUser.setText("");
         etPassword.setText("");
         etRepassword.setText("");
@@ -152,5 +159,13 @@ public class RegisterActivity extends BaseActivity implements IRegisterActivity 
 
     }
 
+    @Override
+    protected void onDestroy() {
 
+        if (registerPresenter != null){
+            registerPresenter.detachView();
+            registerPresenter = null;
+        }
+        super.onDestroy();
+    }
 }

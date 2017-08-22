@@ -10,6 +10,8 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/EasyShop" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/apphx1" />
+            <option value="$PROJECT_DIR$/easeui1" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

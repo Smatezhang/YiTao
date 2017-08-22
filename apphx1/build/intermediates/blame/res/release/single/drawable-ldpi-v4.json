@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\hx_ic_images.png",
+        "source": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\build\\generated\\res\\pngs\\release\\drawable-ldpi\\hx_ic_images.png"
+    },
+    {
+        "merged": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\hx_ic_search_white.png",
+        "source": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\build\\generated\\res\\pngs\\release\\drawable-ldpi\\hx_ic_search_white.png"
+    },
+    {
+        "merged": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\hx_ic_add_contacts.png",
+        "source": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\build\\generated\\res\\pngs\\release\\drawable-ldpi\\hx_ic_add_contacts.png"
+    },
+    {
+        "merged": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\hx_ic_search_accent.png",
+        "source": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\build\\generated\\res\\pngs\\release\\drawable-ldpi\\hx_ic_search_accent.png"
+    },
+    {
+        "merged": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\hx_ic_video.png",
+        "source": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\build\\generated\\res\\pngs\\release\\drawable-ldpi\\hx_ic_video.png"
+    },
+    {
+        "merged": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\hx_btn_clear_search_pressed.png",
+        "source": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\build\\generated\\res\\pngs\\release\\drawable-ldpi\\hx_btn_clear_search_pressed.png"
+    },
+    {
+        "merged": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\hx_btn_clear_search_normal.png",
+        "source": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\build\\generated\\res\\pngs\\release\\drawable-ldpi\\hx_btn_clear_search_normal.png"
+    },
+    {
+        "merged": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\hx_ic_location.png",
+        "source": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\build\\generated\\res\\pngs\\release\\drawable-ldpi\\hx_ic_location.png"
+    },
+    {
+        "merged": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\hx_ic_camera.png",
+        "source": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\build\\generated\\res\\pngs\\release\\drawable-ldpi\\hx_ic_camera.png"
+    },
+    {
+        "merged": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\hx_ic_notifications.png",
+        "source": "D:\\Administrator\\AndroidStudioProjects\\YiTao\\apphx1\\build\\generated\\res\\pngs\\release\\drawable-ldpi\\hx_ic_notifications.png"
+    }
+]

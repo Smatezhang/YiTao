@@ -6,4 +6,6 @@ package com.zhuoxin.zhang.yitao.presenter;
 
 public interface IRegisterPresenter {
     void register();
+    void attachView();
+    void detachView();
 }

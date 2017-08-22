@@ -11,11 +11,13 @@ public interface ILoginActivity {
 
     String getusername();
 
-    void loginSuccessed(UserResult result);
 
-    void loginFailed(String s);
+
+    void loginFailed();
 
     void showpb();
 
     void hidepb();
+    void showMsg(String string);
+    void loginSuccess();
 }

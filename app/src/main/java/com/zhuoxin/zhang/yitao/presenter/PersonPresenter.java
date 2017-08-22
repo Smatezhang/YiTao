@@ -1,10 +1,13 @@
 package com.zhuoxin.zhang.yitao.presenter;
 
+import com.feicuiedu.apphx.model.HxMessageManager;
+import com.feicuiedu.apphx.model.HxUserManager;
 import com.google.gson.Gson;
 import com.hannesdorfmann.mosby.mvp.MvpNullObjectBasePresenter;
 import com.zhuoxin.zhang.yitao.medol.PersonInfoView;
 import com.zhuoxin.zhang.yitao.medol.entity.CachePreferences;
 import com.zhuoxin.zhang.yitao.medol.entity.UserResult;
+import com.zhuoxin.zhang.yitao.medol.network.EasyShopApi;
 import com.zhuoxin.zhang.yitao.medol.network.EasyShopClient;
 import com.zhuoxin.zhang.yitao.medol.network.UICallBack;
 
@@ -50,6 +53,12 @@ public class PersonPresenter extends MvpNullObjectBasePresenter<PersonInfoView> 
                 if (mUserResult.getCode() == 1){
                     getView().showMsg(" 上传成功");
                     CachePreferences.setUser(mUserResult.getUser());
+                    getView().updateAvatar(mUserResult.getUser().getHead_Image());
+                    //环信上传头像和设置头像
+                    HxUserManager.getInstance().updateAvatar(EasyShopApi.IMAGE_URL+mUserResult.getUser().getHead_Image());//上传自己头像
+                    HxMessageManager.getInstance().sendAvatarUpdateMessage(EasyShopApi.IMAGE_URL+mUserResult.getUser().getHead_Image());//设置自己头像
+
+
                 }else {
                     getView().showMsg(mUserResult.getMessage());
                 }
