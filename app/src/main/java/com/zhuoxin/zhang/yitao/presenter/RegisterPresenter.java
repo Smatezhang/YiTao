@@ -11,9 +11,7 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-/**
- * Created by Administrator on 2017/8/16.
- */
+
 
 public class RegisterPresenter implements IRegisterPresenter{
     private RegisterModel registerModel;
@@ -27,10 +25,12 @@ public class RegisterPresenter implements IRegisterPresenter{
     @Override
     public void register() {
         registerActivity.showpb();
+
         registerModel.register(registerActivity.getUserName(), registerActivity.getPassword(),registerActivity.getRePassword(), new OnRegisterListener() {
             @Override
             public void successed(String s) {
                     registerActivity.registerSuccessed();
+
                     registerActivity.showMsg("登录成功");
                     registerActivity.hidepb();
             }

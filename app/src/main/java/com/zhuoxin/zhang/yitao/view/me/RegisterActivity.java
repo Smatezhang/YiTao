@@ -22,9 +22,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * Created by Administrator on 2017/8/15.
- */
+
 
 public class RegisterActivity extends BaseActivity implements IRegisterActivity {
     @BindView(R.id.tl)
@@ -52,7 +50,7 @@ public class RegisterActivity extends BaseActivity implements IRegisterActivity 
     private void init() {
         setSupportActionBar(tl);
         ActionBar supportActionBar = getSupportActionBar();
-        supportActionBar.setTitle(R.string.register);
+        supportActionBar.setTitle("注册");
         supportActionBar.setDisplayHomeAsUpEnabled(true);
         //supportActionBar.setHomeButtonEnabled(true);
         etUser.addTextChangedListener(textWatcher);
@@ -90,12 +88,13 @@ public class RegisterActivity extends BaseActivity implements IRegisterActivity 
 
     @OnClick(R.id.btn_login)
     public void onViewClicked() {
+
         if (registerPresenter == null){
             registerPresenter = new RegisterPresenter(this);
             registerPresenter.attachView();
         }
         registerPresenter.register();
-        showpb();
+
     }
 
 
