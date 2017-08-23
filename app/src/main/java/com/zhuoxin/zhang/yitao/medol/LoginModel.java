@@ -2,12 +2,16 @@ package com.zhuoxin.zhang.yitao.medol;
 
 import android.util.Log;
 
+import com.feicuiedu.apphx.model.HxUserManager;
 import com.google.gson.Gson;
+import com.hyphenate.easeui.domain.EaseUser;
+import com.zhuoxin.zhang.yitao.medol.entity.User;
 import com.zhuoxin.zhang.yitao.medol.listener.OnLoginListener;
 import com.zhuoxin.zhang.yitao.medol.network.EasyShopClient;
 import com.zhuoxin.zhang.yitao.medol.network.UICallBack;
 import com.zhuoxin.zhang.yitao.medol.entity.CachePreferences;
 import com.zhuoxin.zhang.yitao.medol.entity.UserResult;
+import com.zhuoxin.zhang.yitao.medol.utils.ConvertUser;
 
 import java.io.IOException;
 
@@ -59,7 +63,10 @@ public class LoginModel implements ILoginModel {
                 int code = result.getCode();
                 if (code == 1){
                     //保存数据
-                    CachePreferences.setUser(result.getUser());
+                    User mUser = result.getUser();
+                    CachePreferences.setUser(mUser);
+                    EaseUser easeUser= ConvertUser.convert(mUser);
+                    HxUserManager.getInstance().asyncLogin(easeUser,mUser.getPassword());
                     onLoginListener.successed(result);
                 }else if (code == 2){
                     onLoginListener.failed(result.getMessage());

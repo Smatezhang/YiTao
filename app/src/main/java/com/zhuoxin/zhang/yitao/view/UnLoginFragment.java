@@ -1,4 +1,4 @@
-package com.zhuoxin.zhang.yitao.view.fragement;
+package com.zhuoxin.zhang.yitao.view;
 
 import android.content.Context;
 import android.net.Uri;

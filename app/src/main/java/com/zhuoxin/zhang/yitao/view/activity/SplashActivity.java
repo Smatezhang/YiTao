@@ -75,7 +75,10 @@ public class SplashActivity extends AppCompatActivity {
 
     public void jump() {
         startActivity(new Intent(this, MainActivity.class));
-        mTimer.cancel();
+        if(mTimer != null){
+            mTimer.cancel();
+        }
+
         finish();
     }
 

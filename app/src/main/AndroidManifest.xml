@@ -40,6 +40,8 @@
         <activity android:name=".view.me.NickNameActivity">
         </activity>
         <activity android:name=".view.shop.GoodsUpdateActivity"/>
+        <activity android:name=".view.shop.GoodsUploadImageShowActivity"/>
+        <activity android:name=".view.me.persongoods.PersonGoodsActivity"/>
     </application>
 
 </manifest>

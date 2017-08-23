@@ -58,14 +58,14 @@ public class LoginPresenter implements ILoginPresenter {
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(HxSimpleEvent event){
-        //if (event.type!= HxEventType.LOGIN)return;
+        if (event.type!= HxEventType.LOGIN)return;
         //表示登录成功
         loginActivity.showMsg("登录成功");
         loginActivity.loginSuccess();
     }
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(HxErrorEvent event){
-       // if (event.type!=HxEventType.LOGIN)return;
+        if (event.type!=HxEventType.LOGIN)return;
         loginActivity.showMsg("环信地址不对");
     }
 }

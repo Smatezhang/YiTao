@@ -17,6 +17,8 @@ import com.zhuoxin.zhang.yitao.medol.entity.User;
 import com.zhuoxin.zhang.yitao.medol.utils.ActivityUtils;
 import com.zhuoxin.zhang.yitao.view.base.BaseFragment;
 import com.zhuoxin.zhang.yitao.medol.entity.CachePreferences;
+import com.zhuoxin.zhang.yitao.view.me.persongoods.PersonGoodsActivity;
+import com.zhuoxin.zhang.yitao.view.shop.GoodsUpdateActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -98,8 +100,11 @@ public class MeFragment extends BaseFragment {
                 mActivityUtils.startActivity(PersonInfoActivity.class);
                 break;
             case R.id.iv_foods:
+                mActivityUtils.startActivity(PersonGoodsActivity.class);
+
                 break;
             case R.id.iv_upload:
+                mActivityUtils.startActivity(GoodsUpdateActivity.class);
                 break;
         }
     }

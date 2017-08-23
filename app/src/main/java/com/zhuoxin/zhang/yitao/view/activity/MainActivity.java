@@ -14,7 +14,7 @@ import com.feicuiedu.apphx.presentation.conversation.HxConversationListFragment;
 import com.zhuoxin.zhang.yitao.R;
 import com.zhuoxin.zhang.yitao.medol.entity.CachePreferences;
 import com.zhuoxin.zhang.yitao.view.base.BaseActivity;
-import com.zhuoxin.zhang.yitao.view.fragement.UnLoginFragment;
+import com.zhuoxin.zhang.yitao.view.UnLoginFragment;
 import com.zhuoxin.zhang.yitao.view.me.MeFragment;
 import com.zhuoxin.zhang.yitao.view.shop.ShopFragment;
 

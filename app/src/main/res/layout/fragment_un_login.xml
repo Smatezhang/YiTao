@@ -2,7 +2,7 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context="com.zhuoxin.zhang.yitao.view.fragement.UnLoginFragment">
+             tools:context="com.zhuoxin.zhang.yitao.view.UnLoginFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

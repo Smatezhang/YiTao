@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -12,6 +13,7 @@ import android.widget.RelativeLayout;
 import com.zhuoxin.zhang.yitao.R;
 import com.zhuoxin.zhang.yitao.medol.entity.ImageItem;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -23,11 +25,35 @@ import butterknife.ButterKnife;
 
 public class GoodsUploadAdapter extends RecyclerView.Adapter {
 
-    private List<ImageItem> mList;
+    private List<ImageItem> mList =new ArrayList<>();
+    //商品图片的编辑模式  1-->不可编辑   2-->可编辑(有CheckBox的)
+    public static final  int MADE_NOMAL =1;
+    public static final  int MADE_MUTI_SELECT =2;
+    private int mode;
 
     private enum ITEMTYPE {
         NORMAL,
         ADD
+    }
+    //设置模式
+    public void changeMode(int mode){
+        this.mode=mode;
+        // TODO: 2017/7/25 0025 更新适配器
+        notifyDataSetChanged();//更新适配器
+    }
+    //获取当前模式
+    public int getMode(){
+        return mode;
+    }
+    //添加图片
+    public void add(ImageItem imageItem){
+        mList.add(imageItem);
+    }
+
+
+    //获取所有上传商品数据
+    public List<ImageItem> getList(){
+        return mList;
     }
 
     @Override
@@ -48,13 +74,13 @@ public class GoodsUploadAdapter extends RecyclerView.Adapter {
             return new LastViewHolder(mView);
         } else {
             mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_item_recyclerview, null);
-            return new LastViewHolder(mView);
+            return new ViewHolder(mView);
         }
 
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         if (holder instanceof LastViewHolder){
             if (position == 8){
                 ((LastViewHolder) holder).mIbRecycleAdd.setVisibility(View.GONE);
@@ -70,9 +96,56 @@ public class GoodsUploadAdapter extends RecyclerView.Adapter {
                 });
             }
         }else if (holder instanceof ViewHolder){
-            /*ImageItem mImageItem = mList.get(position);
-            ((ViewHolder) holder).mBg.setImageBitmap(mImageItem.getBitmap());
-            */
+            final ImageItem mImage = mList.get(position);
+            ((ViewHolder) holder).mIvPhoto.setImageBitmap(mImage.getBitmap());
+            if(mode == MADE_NOMAL){
+                //让checkbox隐藏
+                ((ViewHolder) holder).mCbCheckPhoto.setVisibility(View.GONE);
+
+            }else if (mode == MADE_MUTI_SELECT){
+                //让checkbox 显示
+                ((ViewHolder) holder).mCbCheckPhoto.setVisibility(View.VISIBLE);
+                //checkbox的选中状态监听
+                ((ViewHolder) holder).mCbCheckPhoto.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                        mImage.setCheck(isChecked);
+
+                    }
+                });
+
+                ((ViewHolder) holder).mCbCheckPhoto.setChecked(mImage.isCheck());
+
+            }
+          //图片点击事件
+            ((ViewHolder) holder).mIvPhoto.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener != null){
+
+                        listener.onPhotoClicked( mImage);
+                    }
+                }
+            });
+            //图片长按监听
+            ((ViewHolder) holder).mIvPhoto.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    //改变模式
+                    mode = MADE_MUTI_SELECT;
+                    notifyDataSetChanged();//更新适配器
+                    if (listener != null ){
+                        listener.onLongClicked();
+                    }
+                    return false;
+                }
+
+            });
+
+
+
+
+
 
         }
     }
